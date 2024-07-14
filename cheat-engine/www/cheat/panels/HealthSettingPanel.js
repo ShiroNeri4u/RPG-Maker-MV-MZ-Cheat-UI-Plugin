@@ -22,34 +22,34 @@ export default {
             class="my-0 py-0"
             @change="onDisableRandomEncounterChange">
             <template v-slot:label>
-                <span class="caption">Disable Random Encounter</span>
+                <span class="caption">禁止随机遭遇</span>
             </template>
         </v-checkbox>
-        <v-btn small @click.prevent="encounterBattle">Encounter</v-btn>
-        <v-btn small @click.prevent="victory">Victory</v-btn>
-        <v-btn small @click.prevent="defeat">Defeat</v-btn>
-        <v-btn small @click.prevent="escape">Escape</v-btn>
-        <v-btn small @click.prevent="abort">Abort</v-btn>
+        <v-btn small @click.prevent="encounterBattle">遭遇</v-btn>
+        <v-btn small @click.prevent="victory">胜利</v-btn>
+        <v-btn small @click.prevent="defeat">失败</v-btn>
+        <v-btn small @click.prevent="escape">逃跑</v-btn>
+        <v-btn small @click.prevent="abort">中止</v-btn>
     </v-card-text>
     
-    <v-card-subtitle class="caption pb-1">Enemy</v-card-subtitle>
+    <v-card-subtitle class="caption pb-1">敌人</v-card-subtitle>
     <v-card-text class="pt-0 pb-0">
-        <v-btn small @click.prevent="changeAllEnemyHealth(0)">Set 0</v-btn>
-        <v-btn small @click.prevent="changeAllEnemyHealth(1)">Set 1</v-btn>
-        <v-btn small @click.prevent="recoverAllEnemy">Recovery</v-btn>
-        <v-btn small @click.prevent="fillTpAllEnemy">Fill TP</v-btn>
+        <v-btn small @click.prevent="changeAllEnemyHealth(0)">设置HP为0</v-btn>
+        <v-btn small @click.prevent="changeAllEnemyHealth(1)">设置HP为1</v-btn>
+        <v-btn small @click.prevent="recoverAllEnemy">恢复全部HP</v-btn>
+        <v-btn small @click.prevent="fillTpAllEnemy">补充全部TP</v-btn>
     </v-card-text>
     
-    <v-card-subtitle class="caption pb-1">Party</v-card-subtitle>
+    <v-card-subtitle class="caption pb-1">同伴</v-card-subtitle>
     <v-card-text class="pt-0 pb-0">
-        <v-btn small @click.prevent="changeAllPartyHealth(0)">Set 0</v-btn>
-        <v-btn small @click.prevent="changeAllPartyHealth(1)">Set 1</v-btn>
-        <v-btn small @click.prevent="recoverAllParty">Recovery</v-btn>
-        <v-btn small @click.prevent="fillTpAllParty">Fill TP</v-btn>
+        <v-btn small @click.prevent="changeAllPartyHealth(0)">设置HP为0</v-btn>
+        <v-btn small @click.prevent="changeAllPartyHealth(1)">设置HP为1</v-btn>
+        <v-btn small @click.prevent="recoverAllParty">恢复全部HP</v-btn>
+        <v-btn small @click.prevent="fillTpAllParty">补充全部TP</v-btn>
     </v-card-text>
     
     <template v-if="enemy && enemy.length > 0">
-        <v-card-subtitle class="caption pb-1">Enemy Details</v-card-subtitle>
+        <v-card-subtitle class="caption pb-1">敌人详细</v-card-subtitle>
         <v-card-text class="pt-0 pb-0">
             <health-setting-tab
                 :items="enemy"
@@ -59,7 +59,7 @@ export default {
     </template>
     
     <template v-if="party && party.length > 0">
-        <v-card-subtitle class="caption pb-1">Party Details</v-card-subtitle>
+        <v-card-subtitle class="caption pb-1">同伴详细</v-card-subtitle>
         <v-card-text class="pt-0 pb-0">
             <health-setting-tab
                 :items="party"

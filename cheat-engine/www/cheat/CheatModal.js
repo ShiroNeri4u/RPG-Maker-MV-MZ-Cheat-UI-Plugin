@@ -86,77 +86,77 @@ export default {
 
           navTreeItems: [
               {
-                  name: 'General',
+                  name: '常用',
                   icon: 'mdi-hammer-screwdriver',
                   component: 'general-panel'
               },
               {
-                  name: 'Shortcuts',
+                  name: '快捷键',
                   icon: 'mdi-keyboard-outline',
                   component: 'shortcut-panel'
               },
               {
-                  name: 'HP/MP/Battle',
+                  name: 'HP/MP/战斗',
                   icon: 'mdi-battery-70',
                   component: 'health-setting-panel'
               },
               {
-                  name: 'Stats/Level',
+                  name: '状态/等级',
                   icon: 'mdi-sword-cross',
                   component: 'stats-setting-panel'
               },
               {
-                  name: 'Items',
+                  name: '背包',
                   icon: 'mdi-bag-personal-outline',
                   children: [
                       {
-                          name: 'Item',
+                          name: '物品',
                           icon: 'mdi-flask-empty-plus',
                           component: 'item-setting-panel'
                       },
                       {
-                          name: 'Weapon',
+                          name: '武器',
                           icon: 'mdi-sword',
                           component: 'weapon-setting-panel'
                       },
                       {
-                          name: 'Armor',
+                          name: '防具',
                           icon: 'mdi-shield-plus',
                           component: 'armor-setting-panel'
                       }
                   ]
               },
               {
-                  name: 'Clear States',
+                  name: '清除状态',
                   icon: 'mdi-water-off',
                   component: ''
               },
               {
-                  name: 'Variables',
+                  name: '变量',
                   icon: 'mdi-variable',
                   component: 'variable-setting-panel'
               },
               {
-                  name: 'Switches',
+                  name: '开关',
                   icon: 'mdi-toggle-switch',
                   component: 'switch-setting-panel'
               },
               {
-                  name: 'Save Locations',
+                  name: '保存坐标',
                   icon: 'mdi-map-marker-plus',
                   component: 'save-recall-panel'
               },
               {
-                  name: 'Teleport',
+                  name: '传送',
                   icon: 'mdi-run-fast',
                   component: 'teleport-panel'
               },
               {
-                  name: 'Settings',
+                  name: '设置',
                   icon: 'mdi-cog',
                   children: [
                       {
-                          name: 'Translate',
+                          name: '翻译',
                           icon: 'mdi-google-translate',
                           component: 'translate-settings-panel'
                       }

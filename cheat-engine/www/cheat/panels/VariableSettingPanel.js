@@ -15,7 +15,7 @@ export default {
         :items-per-page="5">
         <template v-slot:top>
             <v-text-field
-                label="Search..."
+                label="搜索..."
                 solo
                 background-color="grey darken-3"
                 v-model="search"
@@ -33,7 +33,7 @@ export default {
                         v-model="excludeNameless"
                         dense
                         hide-details
-                        label="Hide Nameless Items">
+                        label="隐藏无名变量">
                     
                     </v-checkbox>
                 </v-col>
@@ -90,11 +90,11 @@ export default {
 
             tableHeaders: [
                 {
-                    text: 'Name',
+                    text: '变量名',
                     value: 'name'
                 },
                 {
-                    text: 'Value',
+                    text: '值',
                     value: 'value'
                 }
             ],

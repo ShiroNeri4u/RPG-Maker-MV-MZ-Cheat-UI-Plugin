@@ -29,13 +29,13 @@ export default {
                     class="pa-0">
                     <v-checkbox
                         v-model="actor.godMode"
-                        label="God Mode"
+                        label="上帝模式"
                         @change="onGodModeChange(actor)">
                     </v-checkbox>
                     <v-spacer></v-spacer>
                     <v-tooltip
                         bottom>
-                        <span>Reload from game data</span>
+                        <span>重新加载游戏数据</span>
                         <template v-slot:activator="{ on, attrs }">
                             <v-btn
                                 color="pink"
@@ -50,7 +50,7 @@ export default {
                         </template>
                     </v-tooltip>
                 </v-card-actions>
-                <v-card-subtitle class="pa-0">Level / EXP</v-card-subtitle>
+                <v-card-subtitle class="pa-0">等级 / 经验值</v-card-subtitle>
                 <v-row class="mt-0">
                     <v-col>
                         <v-text-field
@@ -76,7 +76,7 @@ export default {
                     </v-col>
                 </v-row>
                 
-                <v-card-subtitle class="pa-0 mt-4">Stats</v-card-subtitle>
+                <v-card-subtitle class="pa-0 mt-4">能力值</v-card-subtitle>
                 <v-row class="mt-0">
                     <v-col
                         v-for="(_, paramIdx) in actor.param.length"

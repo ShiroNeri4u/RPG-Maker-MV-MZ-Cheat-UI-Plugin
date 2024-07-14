@@ -42404,9 +42404,9 @@ var preset = {
     values: {}
   },
   lang: {
-    current: 'en',
+    current: 'zhHans',
     locales: {
-      en: _locale__WEBPACK_IMPORTED_MODULE_1__["en"]
+      zhHans: _locale__WEBPACK_IMPORTED_MODULE_1__["zhHans"]
     },
     // Default translator exists in lang service
     t: undefined

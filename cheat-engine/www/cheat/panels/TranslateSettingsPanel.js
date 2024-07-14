@@ -8,7 +8,7 @@ export default {
 
     template: `
 <v-card flat class="ma-0 pa-0">
-    <v-card-subtitle class="pb-0 font-weight-bold">Usage</v-card-subtitle>
+    <v-card-subtitle class="pb-0 font-weight-bold">使用方法</v-card-subtitle>
     <v-card-text class="pb-0">
         <span
             v-if="selectedDefaultEndPoint">
@@ -19,21 +19,21 @@ export default {
                 {{selectedDefaultEndPoint.name}}
             </a>
             <span v-else>{{selectedDefaultEndPoint.name}}</span>
-            must be running before translation.
+            翻译前必须运行。
         </span>
         <span
             v-if="isCustomEndPoint">
-            Custom translation server must be running before translation.
+            翻译前必须运行自定义翻译服务器。
         </span>
     </v-card-text>
     <v-card-text class="py-0" :class="translatorStatusColor + '--text'">
         {{translatorStatusMessage}}
     </v-card-text>
-    <v-card-subtitle class="pb-0 mt-4 font-weight-bold">Translate</v-card-subtitle>
+    <v-card-subtitle class="pb-0 mt-4 font-weight-bold">翻译</v-card-subtitle>
     <v-card-text class="py-0">
         <v-switch
             v-model="enabled"
-            label="Enable"
+            label="启用"
             dense
             hide-details
             @click.self.stop
@@ -41,7 +41,7 @@ export default {
         </v-switch>
     </v-card-text>
     
-    <v-card-subtitle class="pb-0 mt-4 font-weight-bold">End Point</v-card-subtitle>
+    <v-card-subtitle class="pb-0 mt-4 font-weight-bold">翻译服务</v-card-subtitle>
     <v-card-text class="py-0">
         <v-radio-group 
             hide-details
@@ -60,7 +60,7 @@ export default {
     <v-card-text 
         class="py-0 mt-1 mb-0" 
         v-if="selectedDefaultEndPoint && selectedDefaultEndPoint.helpUrl">
-        <a :href="selectedDefaultEndPoint.helpUrl" target="_blank">How to set up "{{selectedDefaultEndPoint.name}}"</a>
+        <a :href="selectedDefaultEndPoint.helpUrl" target="_blank">怎样设置 "{{selectedDefaultEndPoint.name}}"</a>
     </v-card-text>
     
     <v-card-text 
@@ -136,28 +136,29 @@ export default {
             @keydown.self.stop
             @change="onChnageBulkTranslateChunkSize">
         </v-text-field>
-        <span class="caption grey--text">Number of sentences to be translated simultaneously.</span><br/>
-        <span class="caption grey--text">If the translation doesn't work properly, try reducing the size.</span><br/>
+        <span class="caption grey--text">同时翻译的句子数量。</span><br/>
+        <span class="caption grey--text">如果翻译不能正常工作，请尝试减少句子数量。</span><br/>
         <span v-if="recommendChunkSizeDesc" class="caption font-weight-bold teal--text">{{recommendChunkSizeDesc}}</span>
     </v-card-text>
 
     
-    <v-card-subtitle class="pb-0 mt-4 font-weight-bold">Targets</v-card-subtitle>
+    <v-card-subtitle class="pb-0 mt-4 font-weight-bold">翻译项目</v-card-subtitle>
     <v-card-text class="py-0">
-<!--        <v-switch-->
-<!--            v-model="targets.items"-->
-<!--            label="Translate Items"-->
-<!--            :disabled="!enabled"-->
-<!--            dense-->
-<!--            hide-details-->
-<!--            @click.self.stop-->
-<!--            @change="onChangeTargetsValue">-->
-<!--        </v-switch>-->
-        
         <v-switch
             class="mb-1 mt-4"
+            v-model="targets.items"
+            label="物品"
+            :disabled="!enabled"
+            dense
+            hide-details
+            @click.self.stop
+            @change="onChangeTargetsValue">
+        </v-switch>
+        
+        <v-switch
             v-model="targets.variables"
-            label="Translate Variables"
+            class="my-1"
+            label="变量"
             :disabled="!enabled"
             dense
             hide-details
@@ -168,7 +169,7 @@ export default {
         <v-switch
             v-model="targets.switches"
             class="my-1"
-            label="Translate Switches"
+            label="开关"
             :disabled="!enabled"
             dense
             hide-details
@@ -179,7 +180,7 @@ export default {
         <v-switch
             v-model="targets.maps"
             class="my-1"
-            label="Translate Maps"
+            label="地图"
             :disabled="!enabled"
             dense
             hide-details
@@ -224,15 +225,15 @@ export default {
     computed: {
         translatorStatusMessage () {
             if (this.translatorChecking) {
-                return 'Checking translation server...'
+                return '检查翻译服务器...'
             }
 
             if (this.translatorRunning) {
                 const serverName = this.selectedDefaultEndPoint ? this.selectedDefaultEndPoint.name : 'Custom'
-                return `Translation server(${serverName}) is now running`
+                return `翻译服务器(${serverName}) 没有运行`
             }
 
-            return 'WARN: Translator server is not running'
+            return '警告: 翻译服务器没有运行'
         },
 
         translatorStatusColor () {
@@ -249,7 +250,7 @@ export default {
 
         endPointList () {
             const ret = Object.values(DEFAULT_END_POINTS).map(ep => ({ id: ep.id, name: ep.name }))
-            ret.push({ id: 'custom', name: 'Custom' })
+            ret.push({ id: 'custom', name: '自定义' })
 
             return ret
         },
@@ -267,7 +268,7 @@ export default {
                 return null
             }
 
-            return `Recommended chunk size for ${this.selectedDefaultEndPoint.name} : ${RECOMMEND_CHUNK_SIZE[this.endPointSelection]}`
+            return `${this.selectedDefaultEndPoint.name} 同时翻译的句子量 : ${RECOMMEND_CHUNK_SIZE[this.endPointSelection]}`
         }
     },
 

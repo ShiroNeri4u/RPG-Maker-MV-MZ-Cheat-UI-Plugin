@@ -17,7 +17,7 @@ export default {
         :items-per-page="5">
         <template v-slot:top>
             <v-text-field
-                label="Search..."
+                label="搜索..."
                 solo
                 background-color="grey darken-3"
                 v-model="search"
@@ -31,12 +31,12 @@ export default {
                     v-model="excludeNameless"
                     dense
                     hide-details
-                    label="Hide Nameless Items">
+                    label="隐藏无名开关">
                 </v-checkbox>
                 <v-spacer></v-spacer>
                 <v-tooltip
                     bottom>
-                    <span>{{ allSwitchOn ? 'Turn off all filtered switches' : 'Turn on all filtered switches' }}</span>
+                    <span>{{ allSwitchOn ? '关闭所有选中开关' : '打开所有选中开关' }}</span>
                     <template v-slot:activator="{ on, attrs }">
                         <v-btn
                             color="teal"
@@ -95,11 +95,11 @@ export default {
 
             tableHeaders: [
                 {
-                    text: 'Name',
+                    text: '开关名',
                     value: 'name'
                 },
                 {
-                    text: 'Value',
+                    text: '值',
                     value: 'value'
                 }
             ],
@@ -175,16 +175,16 @@ export default {
             const self = this
             ConfirmDialog.show({
                 width: 450,
-                message: (this.allSwitchOn ? 'Turn off all filtered switches?' : 'Turn on all filtered switches?') + '\n(CAUTION: Potential to give fatal errors to save data)',
+                message: (this.allSwitchOn ? '关闭所有选中开关?' : '打开所有选中开关?') + '\n(注意: 保存存档时可能发生致命错误)',
                 actions: [{
                     icon: 'mdi-close',
-                    label: 'cancel',
+                    label: '取消',
                     color: 'white',
                     action: ConfirmDialog.close
                 }, {
                     icon: this.allSwitchIcon,
                     color: 'green',
-                    label: this.allSwitchOn ? 'Turn Off' : 'Turn On',
+                    label: this.allSwitchOn ? '关闭' : '打开',
                     async action () {
                         const value = !self.allSwitchOn
                         self.filteredTableItems.forEach(item => {

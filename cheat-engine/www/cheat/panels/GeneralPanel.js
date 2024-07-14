@@ -7,13 +7,13 @@ export default {
 <v-card 
     class="ma-0 pa-0"
     flat>
-    <v-card-subtitle class="pb-0 font-weight-bold">Edit</v-card-subtitle>
+    <v-card-subtitle class="pb-0 font-weight-bold">编辑</v-card-subtitle>
     
     <v-card-text 
         class="py-0">
         <v-checkbox
             v-model="noClip"
-            label="No Clip"
+            label="不锁定"
             @change="onNoClipChange">
         </v-checkbox>
     </v-card-text>
@@ -21,7 +21,7 @@ export default {
     <v-card-text class="py-0">
         <v-text-field
             v-model="gold"
-            label="Gold"
+            label="金币"
             outlined
             dense
             hide-details
@@ -42,7 +42,7 @@ export default {
             hide-details
             @change="onSpeedChange">
             <template v-slot:prepend>
-                <span class="grey--text text--lighten-1 align-self-center mr-2 body-2" style="white-space: nowrap;">Move Speed</span>
+                <span class="grey--text text--lighten-1 align-self-center mr-2 body-2" style="white-space: nowrap;">移动速度</span>
                 <v-icon color="grey lighten-3" @click="addSpeed(-stepSpeed)">mdi-chevron-left</v-icon>
             </template>
             <template v-slot:append>
@@ -55,7 +55,7 @@ export default {
             class="pt-0"
             hide-details
             dense
-            label="Fixed"
+            label="固定"
             @change="onSpeedChange">
         </v-checkbox>
         
@@ -70,7 +70,7 @@ export default {
             hide-details
             @change="onGameSpeedChange">
             <template v-slot:prepend>
-                <span class="grey--text text--lighten-1 align-self-center mr-2 d-inline-block body-2" style="white-space: nowrap;">Game Speed</span>
+                <span class="grey--text text--lighten-1 align-self-center mr-2 d-inline-block body-2" style="white-space: nowrap;">游戏速度</span>
                 <v-icon color="grey lighten-3" @click="addGameSpeed(-stepGameSpeed)">mdi-chevron-left</v-icon>
             </template>
             <template v-slot:append>
@@ -85,7 +85,7 @@ export default {
             class="d-inline-flex pt-0"
             hide-details
             dense
-            label="All"
+            label="全部"
             @change="onApplyAllForGameSpeedChange">
         </v-checkbox>
         <v-checkbox
@@ -93,18 +93,18 @@ export default {
             class="d-inline-flex ml-2 pt-0 mb-0"
             hide-details
             dense
-            label="Battle"
+            label="战斗"
             @change="onApplyBattleForGameSpeedChange">
         </v-checkbox>
     </v-card-text>
     
-    <v-card-subtitle class="mt-3 font-weight-bold">Quick Actions</v-card-subtitle>
+    <v-card-subtitle class="mt-3 font-weight-bold">快捷操作</v-card-subtitle>
     
     <v-card-text class="py-0">
         <v-btn
             small
             @click="gotoTitle">
-            To Title
+            回到标题
         </v-btn>
     </v-card-text>
     
@@ -113,12 +113,12 @@ export default {
             small
             class="mr-1"
             @click="toggleSaveScene">
-            Open Save
+            存档
         </v-btn>
         <v-btn
             small
             @click="toggleLoadScene">
-            Open Load
+            读档
         </v-btn>
     </v-card-text>
     
