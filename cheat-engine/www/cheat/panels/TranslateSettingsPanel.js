@@ -122,7 +122,7 @@ export default {
     </v-card-text>
     
     
-    <v-card-subtitle class="pb-0 mt-4 font-weight-bold">Bulk translate</v-card-subtitle>
+    <v-card-subtitle class="pb-0 mt-4 font-weight-bold">批量翻译</v-card-subtitle>
     <v-card-text class="py-0 mt-1">
         <v-text-field
             class="body-2"
@@ -136,8 +136,8 @@ export default {
             @keydown.self.stop
             @change="onChnageBulkTranslateChunkSize">
         </v-text-field>
-        <span class="caption grey--text">同时翻译的句子数量。</span><br/>
-        <span class="caption grey--text">如果翻译不能正常工作，请尝试减少句子数量。</span><br/>
+        <span class="caption grey--text">同时翻译的句子数。</span><br/>
+        <span class="caption grey--text">如果翻译不能正常工作，请尝试减少句子数。</span><br/>
         <span v-if="recommendChunkSizeDesc" class="caption font-weight-bold teal--text">{{recommendChunkSizeDesc}}</span>
     </v-card-text>
 

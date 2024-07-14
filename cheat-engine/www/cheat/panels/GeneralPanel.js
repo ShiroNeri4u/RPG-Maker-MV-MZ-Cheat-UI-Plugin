@@ -124,7 +124,7 @@ export default {
     
     <v-tooltip
         bottom>
-        <span>Reload from game data</span>
+        <span>重新加载游戏数据</span>
         <template v-slot:activator="{ on, attrs }">
             <v-btn
                 style="top: 0px; right: 0px;"
