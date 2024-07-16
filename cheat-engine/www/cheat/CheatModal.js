@@ -142,7 +142,7 @@ export default {
                   component: 'switch-setting-panel'
               },
               {
-                  name: '保存坐标',
+                  name: '坐标',
                   icon: 'mdi-map-marker-plus',
                   component: 'save-recall-panel'
               },
