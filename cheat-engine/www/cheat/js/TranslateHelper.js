@@ -104,7 +104,7 @@ class Translator {
 
 class TranslateSettings {
     constructor () {
-        this.kvStorage = new KeyValueStorage('./www/cheat-settings/translate.json')
+        this.kvStorage = new KeyValueStorage('./cheat-settings/translate.json')
         this.__readSettings()
     }
 

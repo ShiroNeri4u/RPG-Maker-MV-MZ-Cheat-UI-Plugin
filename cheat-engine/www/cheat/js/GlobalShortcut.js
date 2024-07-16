@@ -387,7 +387,7 @@ class GlobalShortcut {
     initialize () {
         console.log('__global shortcut initialized')
 
-        this.shortcutSettingsFile = './www/cheat-settings/shortcuts.json'
+        this.shortcutSettingsFile = './cheat-settings/shortcuts.json'
 
         // initialize shortcut settings
         this.shortcutSettings = {}

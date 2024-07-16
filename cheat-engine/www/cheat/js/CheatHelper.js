@@ -302,13 +302,13 @@ export class GameSpeedCheat {
         const options = GameSpeedCheat.sceneOptions()
         const sceneOptionKey = Object.keys(GameSpeedCheat.sceneOptions()).find(key => options[key] === sceneOption)
 
-        const storage = new KeyValueStorage('./www/cheat-settings/gameSpeed.json')
+        const storage = new KeyValueStorage('./cheat-settings/gameSpeed.json')
 
         storage.setItem('data', JSON.stringify({ rate: rate, sceneOption: sceneOptionKey }))
     }
 
     static __readSettings () {
-        const storage = new KeyValueStorage('./www/cheat-settings/gameSpeed.json')
+        const storage = new KeyValueStorage('./cheat-settings/gameSpeed.json')
 
         const json = storage.getItem('data')
 
@@ -361,13 +361,13 @@ export class SpeedCheat {
     }
 
     static __writeSettings (speed, fixed) {
-        const storage = new KeyValueStorage('./www/cheat-settings/speed.json')
+        const storage = new KeyValueStorage('./cheat-settings/speed.json')
 
         storage.setItem('data', JSON.stringify({ speed: speed, fixed: fixed }))
     }
 
     static __readSettings () {
-        const storage = new KeyValueStorage('./www/cheat-settings/speed.json')
+        const storage = new KeyValueStorage('./cheat-settings/speed.json')
 
         const json = storage.getItem('data')
 

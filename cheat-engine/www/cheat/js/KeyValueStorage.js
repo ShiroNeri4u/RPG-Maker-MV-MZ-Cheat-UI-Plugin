@@ -45,4 +45,4 @@ export class KeyValueStorage {
     }
 }
 
-export const KEY_VALUE_STORAGE = new KeyValueStorage('./www/cheat-settings/kv-storage.json')
+export const KEY_VALUE_STORAGE = new KeyValueStorage('./cheat-settings/kv-storage.json')
