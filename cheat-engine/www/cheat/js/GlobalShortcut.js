@@ -95,15 +95,15 @@ export function isInValueInRange(value, lowerBound, upperBound) {
     try {
         value = Number(value)
     } catch (err) {
-        return 'Value must be a number'
+        return '值必须是数字'
     }
 
     if (isNaN(value) || !Number.isInteger(value)) {
-        return 'Value must be a number'
+        return '值必须是数字'
     }
 
     if (value < lowerBound || upperBound < value) {
-        return `Value must be between [${lowerBound}, ${upperBound}]`
+        return `值必须在 [${lowerBound}, ${upperBound}] 之间`
     }
 
     return false
@@ -112,8 +112,8 @@ export function isInValueInRange(value, lowerBound, upperBound) {
 // immutable
 const shortcutConfig = {
     toggleCheatModal: {
-        name: 'Toggle cheat window',
-        desc: 'Key mapping required',
+        name: '切换作弊窗口',
+        desc: '按键必须绑定',
         necessary: true,
         enterAction (param) {
             GeneralCheat.toggleCheatModal()
@@ -121,7 +121,7 @@ const shortcutConfig = {
     },
 
     toggleCheatModalToSaveLocationComponent: {
-        name: 'Toggle "Save Locations" tab',
+        name: '切换 "坐标" 选项卡',
         desc: '',
         enterAction (param) {
             GeneralCheat.toggleCheatModal('save-recall-panel')
@@ -129,12 +129,12 @@ const shortcutConfig = {
     },
 
     quickSave: {
-        name: 'Quick save',
-        desc: 'Quick save to certain slot',
+        name: '快速保存',
+        desc: '快速保存指定存档',
         param: {
             slot: {
-                name: 'Slot',
-                desc: 'Slot for saved',
+                name: '槽位',
+                desc: '存档槽位',
                 isInvalidValue (value) {
                     return isInValueInRange(value, 1, DataManager.maxSavefiles())
                 },
@@ -149,12 +149,12 @@ const shortcutConfig = {
     },
 
     quickLoad: {
-        name: 'Quick load',
-        desc: 'Quick load from certain slot',
+        name: '快速加载',
+        desc: '快速加载指定存档',
         param: {
             slot: {
-                name: 'Slot',
-                desc: 'Slot for loaded',
+                name: '槽位',
+                desc: '存档槽位',
                 isInvalidValue (value) {
                     return isInValueInRange(value, 1, DataManager.maxSavefiles())
                 },
@@ -169,7 +169,7 @@ const shortcutConfig = {
     },
 
     openSaveScene: {
-        name: 'Open save scene',
+        name: '打开存档界面',
         desc: '',
         enterAction (param) {
             SceneCheat.toggleSaveScene()
@@ -177,7 +177,7 @@ const shortcutConfig = {
     },
 
     openLoadScene: {
-        name: 'Open load scene',
+        name: '打开读档界面',
         desc: '',
         enterAction (param) {
             SceneCheat.toggleLoadScene()
@@ -185,7 +185,7 @@ const shortcutConfig = {
     },
 
     gotoTitle: {
-        name: 'Go to title',
+        name: '返回标题界面',
         desc: '',
         enterAction (param) {
             SceneCheat.gotoTitle()
@@ -193,7 +193,7 @@ const shortcutConfig = {
     },
 
     forceVictory: {
-        name: 'Force victory from battle',
+        name: '强制战斗胜利',
         desc: '',
         enterAction (param) {
             BattleCheat.victory()
@@ -201,7 +201,7 @@ const shortcutConfig = {
     },
 
     forceDefeat: {
-        name: 'Force defeat from battle',
+        name: '强制战斗失败',
         desc: '',
         enterAction (param) {
             BattleCheat.defeat()
@@ -209,7 +209,7 @@ const shortcutConfig = {
     },
 
     forceEscape: {
-        name: 'Force escape from battle',
+        name: '强制战斗逃跑',
         desc: '',
         enterAction (param) {
             BattleCheat.escape()
@@ -217,7 +217,7 @@ const shortcutConfig = {
     },
 
     toggleNoClip: {
-        name: 'Toggle no clip',
+        name: '切换至不锁定',
         desc: '',
         enterAction (param) {
             GeneralCheat.toggleNoClip(true)
@@ -225,7 +225,7 @@ const shortcutConfig = {
     },
 
     enemyWound: {
-        name: 'Set enemies HP to 1',
+        name: '设置敌人血量为1',
         desc: '',
         enterAction (param) {
             BattleCheat.changeAllEnemyHealth(1)
@@ -233,15 +233,15 @@ const shortcutConfig = {
     },
 
     enemyRecovery: {
-        name: 'Recover all enemies',
-        desc: 'Fill HP/MP to max',
+        name: '敌人全回复',
+        desc: '补充全部HP/MP',
         enterAction (param) {
             BattleCheat.recoverAllEnemy()
         }
     },
 
     partyWound: {
-        name: 'Set party HP to 1',
+        name: '设置同伴血量为1',
         desc: '',
         enterAction (param) {
             BattleCheat.changeAllPartyHealth(1)
@@ -249,20 +249,20 @@ const shortcutConfig = {
     },
 
     partyRecovery: {
-        name: 'Recover all party',
-        desc: 'Fill HP/MP to max',
+        name: '同伴全回复',
+        desc: '补充全部HP/MP',
         enterAction (param) {
             BattleCheat.recoverAllParty()
         }
     },
 
     setSpeed: {
-        name: 'Set speed',
-        desc: 'Set speed to certain value',
+        name: '速度',
+        desc: '设置指定速度',
         param: {
             speed: {
-                name: 'Speed',
-                desc: 'Speed for set',
+                name: '速度',
+                desc: '速度大小',
                 isInvalidValue (value) {
                     return isInValueInRange(value, 1, 10)
                 },
@@ -278,13 +278,13 @@ const shortcutConfig = {
     },
 
     skipMessage: {
-        name: 'Skip Message',
+        name: '加速',
         desc: '',
         combiningKeyAlone: true,
         param: {
             accelerate: {
-                name: 'Accelerate game speed',
-                desc: 'Accelerate game speed while skipping message',
+                name: '加速游戏速率',
+                desc: '加速倍率',
                 isInvalidValue (value) {
                     return isInValueInRange(value, 1, 50)
                 },
@@ -303,8 +303,8 @@ const shortcutConfig = {
     },
 
     openDevTool: {
-        name: 'Open dev tool',
-        desc: 'Open Chromium dev tool',
+        name: '打开开发工具',
+        desc: '打开Chromium开发工具',
         enterAction (param) {
             if (Utils.isNwjs()) {
                 require('nw.gui').Window.get().showDevTools()
@@ -519,12 +519,12 @@ class GlobalShortcut {
         try {
             this.shortcutSettings = parseStringToKeyObject(rawSettings)
         } catch (err) {
-            Alert.warn('Can\'t parse shortcut settings. Use default settings instead.\n(You can use cheat plugin anyway)', err)
+            Alert.warn('无法解析快捷按键配置。使用默认配置。\n\(你可以任意使用作弊插件\))', err)
 
             try {
                 this.shortcutSettings = parseStringToKeyObject(defaultShortcutSettings)
             } catch (err) {
-                Alert.error('Can\'t parse shortcut settings. Cheat plugin will not work properly', err)
+                Alert.error('无法解析快捷按键配置。作弊插件无法正常工作', err)
             }
         }
     }
@@ -597,7 +597,7 @@ class GlobalShortcut {
 
         const existingValue = this.shortcutMap.getValue(newKey)
         if (existingValue) {
-            throw Error(`Conflict with existing shortcut : [${newKey.asDisplayString()}] ${existingValue.name}`)
+            throw Error(`快捷键冲突 : [${newKey.asDisplayString()}] ${existingValue.name}`)
         }
 
         // remove prev key binding if prev key exists

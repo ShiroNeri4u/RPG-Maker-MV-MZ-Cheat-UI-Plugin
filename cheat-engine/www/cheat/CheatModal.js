@@ -86,12 +86,12 @@ export default {
 
           navTreeItems: [
               {
-                  name: '常用',
+                  name: '常用功能',
                   icon: 'mdi-hammer-screwdriver',
                   component: 'general-panel'
               },
               {
-                  name: '快捷键',
+                  name: '快捷按键',
                   icon: 'mdi-keyboard-outline',
                   component: 'shortcut-panel'
               },
@@ -101,7 +101,7 @@ export default {
                   component: 'health-setting-panel'
               },
               {
-                  name: '状态/等级',
+                  name: '能力/等级',
                   icon: 'mdi-sword-cross',
                   component: 'stats-setting-panel'
               },
@@ -127,7 +127,7 @@ export default {
                   ]
               },
               {
-                  name: '清除状态',
+                  name: '状态',
                   icon: 'mdi-water-off',
                   component: ''
               },
