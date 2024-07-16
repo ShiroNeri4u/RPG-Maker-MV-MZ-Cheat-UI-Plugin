@@ -124,7 +124,7 @@ class TranslateSettings {
                 },
 
                 targets: {
-                    items: false,
+                    items: true,
                     variables: true,
                     switches: true,
                     maps: true,
